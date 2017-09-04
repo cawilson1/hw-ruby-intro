@@ -3,15 +3,41 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  sum = 0
+  arr.each{ |var| sum += var}
+sum
+  
 end
+
+
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  return 0  if arr.length == 0
+  else if arr.length==1
+    return arr[0]
+  end
+  arr.sort!
+  var = arr[arr.length - 1] + arr[arr.length - 2]
+  return var
+
 end
 
+
+
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if (arr.length == 0 || arr.length == 1)
+    return false
+  end
+  
+  arr.each{ |v1|
+    arr.each{|v2|
+     sum = v1 + v2
+     if sum == n
+       return true unless v1 == v2
+     end
+    }
+  }
+  return false
 end
 
 # Part 2
