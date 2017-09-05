@@ -88,6 +88,25 @@ end
 
 # Part 3
 
-class BookInStocks
-# YOUR CODE HERE
+class BookInStock
+
+  def initialize (isbn, price)
+    if isbn.to_s.empty?
+        raise ArgumentError
+    end 
+    if !(price > 0)
+        raise ArgumentError
+    end 
+    @isbn, @price = isbn, price
+  end
+  
+  #weird ruby getter and setter thing
+  #equiv to attr_reader and attr_writer
+  attr_accessor :isbn
+  attr_accessor :price
+
+  def price_as_string
+    return "$%0.2f" % [@price]
+  end
+
 end
