@@ -43,19 +43,51 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+
+  if s.to_s.empty?
+    return false
+  end
+  
+importantLetter = s.split(//).first.downcase
+
+loopStringVowel = "aeiou"
+loopStringCons = "bcdfghjklmnpqrstvwxyz"
+
+  if loopStringVowel.include? importantLetter
+    return false
+  elsif loopStringCons.include? importantLetter
+    return true
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  
+if s.to_s.empty?
+  return false
+end
+  
+array = s.split("")
+
+array.each{|v| if (v!="1"&&v!="0")
+  return false
+end}
+  
+decimalVal = s.to_i(2)
+if decimalVal % 4 == 0
+  return true
+end
+
+return false
 end
 
 # Part 3
 
-class BookInStock
+class BookInStocks
 # YOUR CODE HERE
 end
